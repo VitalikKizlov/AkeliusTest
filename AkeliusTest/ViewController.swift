@@ -7,15 +7,20 @@
 
 import UIKit
 import WebKit
+import Combine
 
 class ViewController: UIViewController {
     
     private var webView: WKWebView!
     private let configuration = WKWebViewConfiguration()
+    private let viewModel = ViewModel()
+    private var subscriptions: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWebView()
+        setupBindings()
+        viewModel.startDownloading()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -36,18 +41,16 @@ class ViewController: UIViewController {
 
         webView = WKWebView(frame: view.bounds, configuration: configuration)
         view.addSubview(webView)
-        
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            webView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            webView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            webView.topAnchor.constraint(equalTo: view.topAnchor)
-        ])
+    }
 
-        if let url = Bundle.main.url(forResource: "index", withExtension: "html") {
-            webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
-        }
+    private func setupBindings() {
+        viewModel.urlSettingsPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] settings in
+                guard let self = self else { return }
+                self.webView.loadFileURL(settings.fileURL, allowingReadAccessTo: settings.folderURL)
+            }
+            .store(in: &subscriptions)
     }
 }
 
@@ -69,7 +72,15 @@ extension ViewController: WKScriptMessageHandler {
                 }
             }
         case .buttonClick:
-            print("button clicked")
+            let script = "document.getElementById('top_image').src = './cat.jpeg';"
+
+            webView.evaluateJavaScript(script) { _, error in
+                if let error = error {
+                    print("Error evaluating JavaScript: \(error)")
+                } else {
+                    print("JavaScript executed successfully")
+                }
+            }
         }
     }
 }

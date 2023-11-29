@@ -13,12 +13,12 @@
 		FBE2D4192B178182001C798C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D4172B178182001C798C /* Main.storyboard */; };
 		FBE2D41B2B178183001C798C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D41A2B178183001C798C /* Assets.xcassets */; };
 		FBE2D41E2B178183001C798C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D41C2B178183001C798C /* LaunchScreen.storyboard */; };
-		FBE2D4262B17822A001C798C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D4252B17822A001C798C /* index.html */; };
-		FBE2D42A2B17830B001C798C /* blank.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D4272B17830B001C798C /* blank.jpeg */; };
-		FBE2D42B2B17830B001C798C /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D4282B17830B001C798C /* image.jpeg */; };
-		FBE2D42C2B17830B001C798C /* the_other_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D4292B17830B001C798C /* the_other_image.jpeg */; };
 		FBE2D4342B178F8A001C798C /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D4332B178F8A001C798C /* cat.jpeg */; };
 		FBE2D4362B17987A001C798C /* WebViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2D4352B17987A001C798C /* WebViewEvent.swift */; };
+		FBE2D4392B179F64001C798C /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = FBE2D4382B179F64001C798C /* ZIPFoundation */; };
+		FBE2D43B2B179F70001C798C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2D43A2B179F70001C798C /* ViewModel.swift */; };
+		FBE2D43D2B17AD3A001C798C /* UnzipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2D43C2B17AD3A001C798C /* UnzipService.swift */; };
+		FBE2D43F2B17B25E001C798C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2D43E2B17B25E001C798C /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,11 @@
 		FBE2D41A2B178183001C798C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBE2D41D2B178183001C798C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBE2D41F2B178183001C798C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBE2D4252B17822A001C798C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		FBE2D4272B17830B001C798C /* blank.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blank.jpeg; sourceTree = "<group>"; };
-		FBE2D4282B17830B001C798C /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpeg; sourceTree = "<group>"; };
-		FBE2D4292B17830B001C798C /* the_other_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_other_image.jpeg; sourceTree = "<group>"; };
 		FBE2D4332B178F8A001C798C /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
 		FBE2D4352B17987A001C798C /* WebViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEvent.swift; sourceTree = "<group>"; };
+		FBE2D43A2B179F70001C798C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FBE2D43C2B17AD3A001C798C /* UnzipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnzipService.swift; sourceTree = "<group>"; };
+		FBE2D43E2B17B25E001C798C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE2D4392B179F64001C798C /* ZIPFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,11 +68,7 @@
 		FBE2D4102B178182001C798C /* AkeliusTest */ = {
 			isa = PBXGroup;
 			children = (
-				FBE2D4272B17830B001C798C /* blank.jpeg */,
-				FBE2D4282B17830B001C798C /* image.jpeg */,
 				FBE2D4332B178F8A001C798C /* cat.jpeg */,
-				FBE2D4292B17830B001C798C /* the_other_image.jpeg */,
-				FBE2D4252B17822A001C798C /* index.html */,
 				FBE2D4112B178182001C798C /* AppDelegate.swift */,
 				FBE2D4132B178182001C798C /* SceneDelegate.swift */,
 				FBE2D4152B178182001C798C /* ViewController.swift */,
@@ -81,6 +77,9 @@
 				FBE2D41C2B178183001C798C /* LaunchScreen.storyboard */,
 				FBE2D41F2B178183001C798C /* Info.plist */,
 				FBE2D4352B17987A001C798C /* WebViewEvent.swift */,
+				FBE2D43A2B179F70001C798C /* ViewModel.swift */,
+				FBE2D43C2B17AD3A001C798C /* UnzipService.swift */,
+				FBE2D43E2B17B25E001C798C /* Constants.swift */,
 			);
 			path = AkeliusTest;
 			sourceTree = "<group>";
@@ -101,6 +100,9 @@
 			dependencies = (
 			);
 			name = AkeliusTest;
+			packageProductDependencies = (
+				FBE2D4382B179F64001C798C /* ZIPFoundation */,
+			);
 			productName = AkeliusTest;
 			productReference = FBE2D40E2B178182001C798C /* AkeliusTest.app */;
 			productType = "com.apple.product-type.application";
@@ -129,6 +131,9 @@
 				Base,
 			);
 			mainGroup = FBE2D4052B178182001C798C;
+			packageReferences = (
+				FBE2D4372B179F64001C798C /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+			);
 			productRefGroup = FBE2D40F2B178182001C798C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,12 +148,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBE2D42A2B17830B001C798C /* blank.jpeg in Resources */,
-				FBE2D42C2B17830B001C798C /* the_other_image.jpeg in Resources */,
 				FBE2D41E2B178183001C798C /* LaunchScreen.storyboard in Resources */,
-				FBE2D4262B17822A001C798C /* index.html in Resources */,
 				FBE2D4342B178F8A001C798C /* cat.jpeg in Resources */,
-				FBE2D42B2B17830B001C798C /* image.jpeg in Resources */,
 				FBE2D41B2B178183001C798C /* Assets.xcassets in Resources */,
 				FBE2D4192B178182001C798C /* Main.storyboard in Resources */,
 			);
@@ -161,9 +162,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE2D43B2B179F70001C798C /* ViewModel.swift in Sources */,
 				FBE2D4362B17987A001C798C /* WebViewEvent.swift in Sources */,
 				FBE2D4162B178182001C798C /* ViewController.swift in Sources */,
 				FBE2D4122B178182001C798C /* AppDelegate.swift in Sources */,
+				FBE2D43F2B17B25E001C798C /* Constants.swift in Sources */,
+				FBE2D43D2B17AD3A001C798C /* UnzipService.swift in Sources */,
 				FBE2D4142B178182001C798C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +391,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FBE2D4372B179F64001C798C /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.17;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FBE2D4382B179F64001C798C /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBE2D4372B179F64001C798C /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FBE2D4062B178182001C798C /* Project object */;
 }
