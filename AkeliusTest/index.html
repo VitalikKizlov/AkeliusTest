@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>simplified wrapper experiment</title>
+    <style>
+      html {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        text-align: center;
+      }
+      img {
+        width: 200px;
+        height: 150px;
+      }
+    </style>
+    <script>
+      function handleButtonClick() {
+        document.getElementById('the_other_image').src = './the_other_image.jpeg';
+
+        window.webkit.messageHandlers.buttonClickHandler.postMessage("Button clicked!");
+      }
+    </script>
+  </head>
+  <body>
+    <img src="image.jpeg" alt="the image" />
+    <br/><br/>
+    <button type="button" onclick="handleButtonClick()">Click Me!</button>
+    <br/><br/>
+    <img src="blank.jpeg" alt="the other image" id="the_other_image" />
+  </body>
+</html>
