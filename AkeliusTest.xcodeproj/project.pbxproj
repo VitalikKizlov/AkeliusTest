@@ -18,6 +18,7 @@
 		FBE2D42B2B17830B001C798C /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D4282B17830B001C798C /* image.jpeg */; };
 		FBE2D42C2B17830B001C798C /* the_other_image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D4292B17830B001C798C /* the_other_image.jpeg */; };
 		FBE2D4342B178F8A001C798C /* cat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = FBE2D4332B178F8A001C798C /* cat.jpeg */; };
+		FBE2D4362B17987A001C798C /* WebViewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE2D4352B17987A001C798C /* WebViewEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FBE2D4282B17830B001C798C /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpeg; sourceTree = "<group>"; };
 		FBE2D4292B17830B001C798C /* the_other_image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = the_other_image.jpeg; sourceTree = "<group>"; };
 		FBE2D4332B178F8A001C798C /* cat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat.jpeg; sourceTree = "<group>"; };
+		FBE2D4352B17987A001C798C /* WebViewEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				FBE2D41A2B178183001C798C /* Assets.xcassets */,
 				FBE2D41C2B178183001C798C /* LaunchScreen.storyboard */,
 				FBE2D41F2B178183001C798C /* Info.plist */,
+				FBE2D4352B17987A001C798C /* WebViewEvent.swift */,
 			);
 			path = AkeliusTest;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE2D4362B17987A001C798C /* WebViewEvent.swift in Sources */,
 				FBE2D4162B178182001C798C /* ViewController.swift in Sources */,
 				FBE2D4122B178182001C798C /* AppDelegate.swift in Sources */,
 				FBE2D4142B178182001C798C /* SceneDelegate.swift in Sources */,

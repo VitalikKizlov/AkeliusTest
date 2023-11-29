@@ -9,18 +9,17 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController {
-
+    
     private var webView: WKWebView!
+    private let configuration = WKWebViewConfiguration()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWebView()
     }
 
-    private func setupWebView() {
-        let configuration = WKWebViewConfiguration()
-        configuration.userContentController.add(self, name: "buttonClickHandler")
-        configuration.userContentController.add(self, name: "onStart")
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
         let js = """
             window.webkit.messageHandlers.onStart.postMessage("onStart");
@@ -28,6 +27,12 @@ class ViewController: UIViewController {
 
         let onStartScript = WKUserScript(source: js, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
         configuration.userContentController.addUserScript(onStartScript)
+    }
+
+    private func setupWebView() {
+        WebViewEvent.allCases.forEach { event in
+            configuration.userContentController.add(self, name: event.rawValue)
+        }
 
         webView = WKWebView(frame: view.bounds, configuration: configuration)
         view.addSubview(webView)
@@ -50,8 +55,10 @@ class ViewController: UIViewController {
 
 extension ViewController: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        switch message.name {
-        case "onStart":
+        guard let event = WebViewEvent(rawValue: message.name) else { return }
+
+        switch event {
+        case .start:
             let script = "document.getElementById('the_other_image').src = './cat.jpeg';"
 
             webView.evaluateJavaScript(script) { _, error in
@@ -61,10 +68,8 @@ extension ViewController: WKScriptMessageHandler {
                     print("JavaScript executed successfully")
                 }
             }
-        case "buttonClickHandler":
+        case .buttonClick:
             print("button clicked")
-        default:
-            break
         }
     }
 }
