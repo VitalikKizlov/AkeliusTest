@@ -22,7 +22,7 @@ final class ViewModel {
     // MARK: - Public
 
     func startDownloading() {
-        let url = "https://file.io/HtV5d6rrk4j7"
+        let url = "https://pstaticlanguage.blob.core.windows.net/consumer-kit/simplified-wrapper.v1.zip"
 
         unzipService.downloadAndUnzip(from: url, toFolder: Constants.folderName) { [weak self] result in
             guard let self = self else { return }
@@ -43,7 +43,8 @@ final class ViewModel {
 
     private func proceedUnzipFiles() {
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let folderURL = documentsDirectoryURL.appendingPathComponent(Constants.folderName, isDirectory: true)
+        let path = "\(Constants.folderName)/\(Constants.unzipFolderName)"
+        let folderURL = documentsDirectoryURL.appendingPathComponent(path, isDirectory: true)
 
         do {
             let items = try FileManager.default.contentsOfDirectory(atPath: folderURL.relativePath)

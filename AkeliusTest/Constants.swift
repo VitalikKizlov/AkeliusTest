@@ -9,4 +9,5 @@ import Foundation
 
 struct Constants {
     static let folderName = "Akelius"
+    static let unzipFolderName = "simplified-wrapper"
 }

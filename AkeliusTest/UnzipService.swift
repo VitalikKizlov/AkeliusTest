@@ -88,7 +88,8 @@ final class UnzipService: UnzipServiceProtocol {
         }
         
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let destinationURL = documentsDirectoryURL.appendingPathComponent(Constants.folderName).appendingPathComponent("cat.jpeg")
+        let path = "\(Constants.folderName)/\(Constants.unzipFolderName)"
+        let destinationURL = documentsDirectoryURL.appendingPathComponent(path).appendingPathComponent("cat.jpeg")
 
         do {
             try FileManager.default.copyItem(at: bundleImageURL, to: destinationURL)
